@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovators Club // Questionnaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  /* =====================================================
+     DESIGN TOKENS — identical to the other three pages.
+     ===================================================== */
+  :root{
+    --bg:        #0A0E13;
+    --panel:     #10161D;
+    --panel-2:   #141B24;
+    --line:      #223040;
+    --line-soft: #1A232D;
+    --text:      #E7EDF2;
+    --text-dim:  #8A98A6;
+    --mint:      #5EE6B0;
+    --amber:     #FF8F3F;
+
+    --font-display: 'Space Mono', monospace;
+    --font-body:    'Inter', sans-serif;
+
+    --s1: 8px;  --s2: 16px; --s3: 24px; --s4: 32px;
+    --s5: 48px; --s6: 64px; --s7: 96px; --s8: 128px;
+
+    --maxw: 1160px;
+    --nav-h: 76px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:var(--font-body); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--s4); }
+  .grid-bg{
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:40px 40px;
+  }
+
+  /* NAV — identical to other pages, only the active link differs */
+  header{
+    position:sticky; top:0; z-index:50; height:var(--nav-h);
+    background:rgba(10,14,19,0.9); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{ height:100%; display:flex; align-items:center; justify-content:space-between; gap:var(--s3); }
+  .brand{ display:flex; align-items:center; gap:var(--s2); font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.05em; white-space:nowrap; }
+  .brand-mark{ width:34px; height:34px; flex:none; }
+  .brand small{ display:block; color:var(--text-dim); font-size:0.6rem; letter-spacing:0.15em; margin-top:2px; }
+  nav ul{ display:flex; align-items:center; list-style:none; gap:var(--s4); font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.12em; }
+  nav a{ color:var(--text-dim); padding:6px 2px; transition:color .15s ease; }
+  nav a:hover{ color:var(--text); }
+  nav a.active{ color:var(--amber); }
+  nav a.active::before{ content:"[ "; }
+  nav a.active::after{ content:" ]"; }
+
+  section{ padding:var(--s7) 0; }
+  .section-label{
+    font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.18em;
+    color:var(--text-dim); margin-bottom:var(--s2);
+  }
+  .section-label::before{ content:"// "; color:var(--mint); }
+  h2{
+    font-family:var(--font-display); text-transform:uppercase;
+    font-size:clamp(1.4rem, 3vw, 1.9rem); letter-spacing:0.01em; margin-bottom:var(--s5);
+  }
+
+  /* =====================================================
+     SIGN-UP HERO — two columns: pitch text on the left,
+     the QR code as a physical, scannable "object" on the
+     right. This is the page people look at for 5 seconds
+     on a phone after walking away from the booth, so the
+     QR code has to be the biggest, clearest thing here.
+     ===================================================== */
+  .signup-hero{
+    padding:var(--s7) var(--s4);
+    border-bottom:1px solid var(--line);
+  }
+  .signup-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:var(--s7);
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.2em;
+    color:var(--mint); text-transform:uppercase; margin-bottom:var(--s3);
+  }
+  .signup-hero h1{
+    font-family:var(--font-display); font-weight:700; text-transform:uppercase;
+    font-size:clamp(2rem, 4.6vw, 3.2rem); line-height:1.05; margin-bottom:var(--s4);
+  }
+  .signup-hero p.lede{
+    color:var(--text-dim); font-size:1.05rem; max-width:480px; margin-bottom:var(--s3);
+  }
+  .time-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.08em;
+    color:var(--amber); border:1px solid var(--line); padding:8px 14px;
+    text-transform:uppercase;
+  }
+
+  /* QR panel */
+  .qr-panel{
+    position:relative;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    padding:var(--s5);
+    display:flex; flex-direction:column; align-items:center; gap:var(--s3);
+    justify-self:center;
+    width:100%; max-width:320px;
+  }
+  .corner-tl, .corner-tr, .corner-bl, .corner-br{
+    content:""; position:absolute; width:22px; height:22px; border-color:var(--mint); opacity:0.6;
+  }
+  .corner-tl{ top:10px; left:10px; border-top:2px solid; border-left:2px solid; }
+  .corner-tr{ top:10px; right:10px; border-top:2px solid; border-right:2px solid; }
+  .corner-bl{ bottom:10px; left:10px; border-bottom:2px solid; border-left:2px solid; }
+  .corner-br{ bottom:10px; right:10px; border-bottom:2px solid; border-right:2px solid; }
+
+  .qr-code{
+    width:100%; aspect-ratio:1/1;
+    background:var(--bg);
+    border:1px dashed var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-size:0.75rem; color:var(--text-dim);
+    text-align:center; padding:var(--s3);
+    /* Replace this block with an <img src="your-qr-code.png"> tag */
+  }
+  .qr-label{
+    font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.14em;
+    color:var(--mint); text-transform:uppercase; text-align:center;
+  }
+  .qr-panel .btn{
+    font-family:var(--font-display); font-size:0.75rem; letter-spacing:0.1em;
+    text-transform:uppercase; padding:12px 22px; width:100%; text-align:center;
+    background:var(--amber); color:#101010; font-weight:700; border:1px solid var(--amber);
+  }
+
+  /* =====================================================
+     WHAT'S INSIDE — the form's sections previewed as tags,
+     same component pattern used on the other three pages.
+     ===================================================== */
+  .tag-list{ display:flex; flex-direction:column; gap:var(--s2); max-width:640px; }
+  .tag-list .tag-item{
+    font-family:var(--font-display); font-size:0.78rem; letter-spacing:0.06em;
+    text-transform:uppercase; border:1px solid var(--line); padding:var(--s3);
+    display:flex; justify-content:space-between; align-items:baseline; color:var(--text);
+  }
+  .tag-list .tag-item .desc{
+    font-family:var(--font-body); text-transform:none; letter-spacing:normal;
+    color:var(--text-dim); font-size:0.85rem;
+  }
+  .tag-list .tag-item span.num{ color:var(--mint); flex:none; margin-left:var(--s3); }
+
+  /* teaser line, same component as the mission page black box */
+  .blackbox{
+    background:var(--panel); border:1px solid var(--line); padding:var(--s5);
+    max-width:640px;
+  }
+  .blackbox-line{
+    display:flex; gap:var(--s3); font-family:var(--font-display);
+    padding:var(--s2) 0; font-size:0.9rem;
+  }
+  .blackbox-line .tag{ color:var(--mint); flex:none; width:110px; }
+  .blackbox-line .val{ color:var(--text); }
+
+  /* FOOTER — identical to other pages */
+  footer{ border-top:1px solid var(--line); padding:var(--s6) 0 var(--s5); }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:var(--s4); }
+  footer .meet{ font-family:var(--font-display); font-size:0.78rem; letter-spacing:0.05em; color:var(--text-dim); }
+  footer .meet strong{ color:var(--mint); display:block; margin-bottom:6px; letter-spacing:0.12em; }
+  footer .fine{ font-family:var(--font-display); font-size:0.68rem; color:var(--line); }
+
+  /* =====================================================
+     RESPONSIVE
+     ===================================================== */
+  @media (max-width: 860px){
+    nav ul{ gap:var(--s3); font-size:0.66rem; }
+    .signup-grid{ grid-template-columns:1fr; gap:var(--s5); }
+    .qr-panel{ max-width:280px; }
+  }
+  @media (max-width: 560px){
+    :root{ --nav-h:64px; }
+    .brand small{ display:none; }
+    nav ul{ gap:var(--s2); font-size:0.6rem; }
+    .tag-list .tag-item{ flex-direction:column; gap:6px; }
+    .tag-list .tag-item span.num{ margin-left:0; }
+    .blackbox-line{ flex-direction:column; gap:4px; }
+    .blackbox-line .tag{ width:auto; }
+  }
+
+</style>
+</head>
+<body>
+
+  <header class="grid-bg">
+    <div class="wrap">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 34 34" fill="none">
+          <circle cx="17" cy="17" r="15.5" stroke="#5EE6B0" stroke-width="1.2" opacity="0.5"/>
+          <path d="M17 4 L17 12 M17 22 L17 30 M4 17 L12 17 M22 17 L30 17" stroke="#5EE6B0" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="17" cy="17" r="4.5" fill="#FF8F3F"/>
+        </svg>
+        <div>
+          INNOVATORS CLUB
+          <small>ST. FRANCIS HIGH // DRONES · ROBOTICS · HARDWARE</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="mission.html">MISSION</a></li>
+          <li><a href="video.html">VIDEO</a></li>
+          <li><a href="questionnaire.html" class="active">QUESTIONNAIRE</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= SIGN-UP HERO ================= -->
+  <div class="signup-hero grid-bg">
+    <div class="wrap signup-grid">
+      <div>
+        <div class="eyebrow">&gt; recruitment form</div>
+        <h1>So you wanna be an innovator?</h1>
+        <p class="lede">
+          A few quick questions about you, a little trivia, and one question
+          that actually matters. Fill it out whenever, no rush.
+        </p>
+        <div class="time-badge">⏱ Takes about 3 minutes</div>
+      </div>
+
+      <div class="qr-panel">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+        <div class="qr-code">
+          [ QR CODE HERE ]<br>Replace with your Google Form's QR image
+        </div>
+        <div class="qr-label">Scan to Open Form</div>
+        <a href="#" class="btn">Or Open Link →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WHAT'S INSIDE ================= -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Form Preview</div>
+      <h2>What's inside</h2>
+      <div class="tag-list">
+        <div class="tag-item">
+          Basics <span class="desc">Name, grade, email</span> <span class="num">01</span>
+        </div>
+        <div class="tag-item">
+          Engineering Experience <span class="desc">Ever built or broken anything?</span> <span class="num">02</span>
+        </div>
+        <div class="tag-item">
+          Small Trivia <span class="desc">A few fun, easy questions</span> <span class="num">03</span>
+        </div>
+        <div class="tag-item">
+          Open-Ended <span class="desc">Why STEM actually matters to you</span> <span class="num">04</span>
+        </div>
+        <div class="tag-item">
+          Logistics <span class="desc">When you can meet</span> <span class="num">05</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEASER ================= -->
+  <section class="grid-bg">
+    <div class="wrap">
+      <div class="section-label">Sneak Peek</div>
+      <h2>One question from the form</h2>
+      <div class="blackbox">
+        <div class="blackbox-line">
+          <span class="tag">Q07 / TRIVIA</span>
+          <span class="val">What does "FPV" stand for?</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="grid-bg">
+    <div class="wrap">
+      <div class="meet">
+        <strong>Meetings</strong>
+        Lunch &amp; after-school &middot; 1&ndash;2x / week
+      </div>
+      <div class="fine">INNOVATORS CLUB &middot; ST. FRANCIS HIGH SCHOOL &middot; 2026</div>
+    </div>
+  </footer>
+
+</body>
+</html>
