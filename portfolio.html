@@ -118,7 +118,20 @@
     border:1px solid var(--line);
     padding:var(--s5);
     margin-bottom:var(--s4);
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
   }
+  .project-card:hover{
+    border-color:var(--mint);
+    background:var(--panel);
+  }
+  .view-link{
+    margin-top:var(--s3);
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.08em;
+    color:var(--amber); text-transform:uppercase;
+  }
+  .project-card:hover .view-link{ color:var(--mint); }
   .project-photo{
     position:relative;
     aspect-ratio:4/3;
@@ -270,10 +283,10 @@
       <div class="section-label">Projects</div>
       <h2>What we built</h2>
 
-      <div class="project-card">
+      <a class="project-card" href="project-fpv-drone.html">
         <div class="project-photo">PHOTO: DRONE FRAME, FULL BUILD</div>
         <div>
-          <div class="project-meta"><span>FPV Drone — Prototype 1 &amp; 2</span><span>2025 &ndash; PRESENT</span></div>
+          <div class="project-meta"><span>FPV Drone — Prototype 1 &amp; 2</span><span>EARLY 2026 &ndash; PRESENT</span></div>
           <h3>Custom FPV Drone Build</h3>
           <p>
             Designed and built a custom FPV drone from a bare frame kit.
@@ -288,13 +301,14 @@
             <span class="skill-pill">Flight Controllers</span>
             <span class="skill-pill">Raspberry Pi</span>
           </div>
+          <div class="view-link">View Project →</div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="project-rc-car.html">
         <div class="project-photo">PHOTO: RC CAR BUILD</div>
         <div>
-          <div class="project-meta"><span>RC Car</span><span>[ ADD DATE RANGE ]</span></div>
+          <div class="project-meta"><span>RC Car</span><span>AUGUST &ndash; SEPTEMBER</span></div>
           <h3>Custom-Built RC Car</h3>
           <p>
             [ Placeholder — replace with real details: chassis design/material,
@@ -307,13 +321,14 @@
             <span class="skill-pill">Electronics</span>
             <span class="skill-pill">Mechanical Design</span>
           </div>
+          <div class="view-link">View Project →</div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card">
+      <a class="project-card" href="project-tablet.html">
         <div class="project-photo">PHOTO: TABLET DEVICE</div>
         <div>
-          <div class="project-meta"><span>Custom Tablet Device</span><span>[ ADD DATE RANGE ]</span></div>
+          <div class="project-meta"><span>Custom Tablet Device</span><span>JULY &ndash; PRESENT</span></div>
           <h3>Raspberry Pi–Based Tablet</h3>
           <p>
             [ Placeholder — replace with real details: what the tablet actually
@@ -328,8 +343,9 @@
             <span class="skill-pill">3D Printing</span>
             <span class="skill-pill">CAD</span>
           </div>
+          <div class="view-link">View Project →</div>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>
