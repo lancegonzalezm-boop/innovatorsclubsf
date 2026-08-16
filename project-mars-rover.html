@@ -82,7 +82,7 @@
   .blackbox{ background:var(--panel); border:1px solid var(--line); padding:var(--s5); }
   .blackbox-line{ display:flex; gap:var(--s3); font-family:var(--font-display); padding:var(--s2) 0; border-bottom:1px solid var(--line-soft); font-size:0.9rem; align-items:baseline; flex-wrap:wrap; }
   .blackbox-line:last-child{ border-bottom:none; }
-  .blackbox-line .tag{ color:var(--mint); flex:none; width:150px; }
+  .blackbox-line .tag{ color:var(--mint); flex:none; width:210px; }
   .blackbox-line .val{ color:var(--text); font-family:var(--font-body); }
 
   /* gallery */
@@ -171,15 +171,23 @@
         <div class="section-label">Overview</div>
         <h2>What this project is</h2>
         <p>
-          [ Placeholder — replace with real details: what this rover is
-          designed to do, what real missions or rover designs it draws
-          inspiration from, and what the actual design goals were (payload
-          space, terrain handling, sensor placement, etc.). ]
+          This rover is the Phase 1 design concept from a larger research
+          paper proposing a three-phase transportation architecture for an
+          early Martian settlement growing from 10 to 1,000 residents. Phase
+          1 (10&ndash;100 people) argues that pressurized, crewed rovers are the
+          right transportation mode for a settlement's earliest stage,
+          before rail or maglev infrastructure is justified, and this CAD
+          model is the physical design proposal backing that argument.
         </p>
         <p>
-          [ Placeholder — describe the modeling process: what software was
-          used, how the suspension/wheel geometry was designed, and which
-          parts were fully engineered versus stylized for the render. ]
+          The Martian Terrain Rover (MTR) is a 4-crew, 6-wheel vehicle
+          modeled at 8m long, 4m wide, and 3m tall, notably larger than
+          research rovers like Perseverance, sized for an enclosed,
+          pressurized cabin so crew don't need spacesuits inside it. Every
+          design feature, from the tow cable to the dust shielding, was
+          researched and scored against NASA's Technology Readiness Level
+          (TRL 1&ndash;9) scale, backing each design choice with real missions
+          and published research rather than just intended function.
         </p>
       </div>
       <div class="side-block">
@@ -187,36 +195,38 @@
         <div class="skill-pills">
           <span class="skill-pill">CAD</span>
           <span class="skill-pill">Mechanical Design</span>
+          <span class="skill-pill">Research</span>
+          <span class="skill-pill">Technical Writing</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= BUILD LOG ================= -->
+  <!-- ================= PROCESS ================= -->
   <section class="grid-bg">
     <div class="wrap">
-      <div class="section-label">Build Log</div>
-      <h2>How it came together</h2>
+      <div class="section-label">Process</div>
+      <h2>From requirements to CAD</h2>
       <div class="loop">
         <div class="loop-step">
           <span class="num">01</span>
-          <div class="label">[ Step 1 ]</div>
-          <p>[ e.g. Reference research on real rover suspension systems ]</p>
+          <div class="label">Requirements Research</div>
+          <p>Derived design constraints from Martian conditions: dust, radiation, thermal cycles, reduced gravity.</p>
         </div>
         <div class="loop-step">
           <span class="num">02</span>
-          <div class="label">[ Step 2 ]</div>
-          <p>[ e.g. Chassis and wheel geometry modeled ]</p>
+          <div class="label">Trade Study</div>
+          <p>Scored rovers against utility rail and maglev pod concepts on 9 criteria to justify the Phase 1 choice.</p>
         </div>
         <div class="loop-step">
           <span class="num">03</span>
-          <div class="label">[ Step 3 ]</div>
-          <p>[ e.g. Body panels and sensor mounts added ]</p>
+          <div class="label">CAD Modeling</div>
+          <p>Modeled the 6-wheel, 4-crew rover in Onshape at full proposed dimensions.</p>
         </div>
         <div class="loop-step current">
           <span class="num">04</span>
-          <div class="label">[ Current Step ]</div>
-          <p>[ e.g. Rendering and material/finish pass ]</p>
+          <div class="label">TRL Scoring &amp; Research</div>
+          <p>Justified every design feature against real missions and published sources on a 1&ndash;9 TRL scale.</p>
         </div>
       </div>
     </div>
@@ -228,10 +238,33 @@
       <div class="section-label">Specs</div>
       <h2>What's actually in it</h2>
       <div class="blackbox">
-        <div class="blackbox-line"><span class="tag">SOFTWARE</span><span class="val">[ Add CAD software used ]</span></div>
-        <div class="blackbox-line"><span class="tag">WHEEL CONFIG</span><span class="val">6-wheel, independent suspension</span></div>
-        <div class="blackbox-line"><span class="tag">DESIGN GOAL</span><span class="val">[ Add what the rover is meant to do ]</span></div>
-        <div class="blackbox-line"><span class="tag">STATUS</span><span class="val">[ Add whether this stays a render or moves to a physical build ]</span></div>
+        <div class="blackbox-line"><span class="tag">SOFTWARE</span><span class="val">Onshape</span></div>
+        <div class="blackbox-line"><span class="tag">DIMENSIONS</span><span class="val">8m long &times; 4m wide &times; 3m tall</span></div>
+        <div class="blackbox-line"><span class="tag">WHEELS</span><span class="val">6-wheel configuration, 2m diameter</span></div>
+        <div class="blackbox-line"><span class="tag">CREW</span><span class="val">4-person, enclosed &amp; pressurized cabin</span></div>
+        <div class="blackbox-line"><span class="tag">PHASE</span><span class="val">Phase 1 &mdash; Landing (10&ndash;100 person settlement)</span></div>
+        <div class="blackbox-line"><span class="tag">STATUS</span><span class="val">CAD concept, part of an ongoing transportation research paper</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DESIGN FEATURES ================= -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Design Features</div>
+      <h2>Every feature, scored against NASA's TRL scale</h2>
+      <div class="blackbox">
+        <div class="blackbox-line"><span class="tag">TOW CABLE (TRL 6)</span><span class="val">Front-mounted spindle for towing rocks, cargo, or other rovers.</span></div>
+        <div class="blackbox-line"><span class="tag">ADAPTIVE WHEELS (TRL 2&ndash;9)</span><span class="val">Electrodynamic dust-repelling, terrain-adaptive treads with power-mode lighting.</span></div>
+        <div class="blackbox-line"><span class="tag">6-WHEEL DRIVE (TRL 9)</span><span class="val">Proven configuration, same layout as Curiosity and Perseverance.</span></div>
+        <div class="blackbox-line"><span class="tag">SMART SOLAR ARRAY (TRL 6&ndash;9)</span><span class="val">Foldable side panels that expand or retract based on weather and light.</span></div>
+        <div class="blackbox-line"><span class="tag">AI SCOUT DRONE (TRL 3&ndash;9)</span><span class="val">Detachable scanning drone that explores ahead and perches back on the rover.</span></div>
+        <div class="blackbox-line"><span class="tag">TERRAIN BEACON (TRL 5&ndash;9)</span><span class="val">360&deg; LiDAR scanning for elevation and terrain mapping.</span></div>
+        <div class="blackbox-line"><span class="tag">HIVEMIND DATA CORE (TRL 5)</span><span class="val">Shares scan data across a network of rovers.</span></div>
+        <div class="blackbox-line"><span class="tag">CARGO POD (TRL 9)</span><span class="val">Rear storage for samples, tools, and building materials.</span></div>
+        <div class="blackbox-line"><span class="tag">BATTERY MODULE (TRL 2&ndash;9)</span><span class="val">Lithium-ion batteries plus an MMRTG nuclear power source.</span></div>
+        <div class="blackbox-line"><span class="tag">DOCKING ALIGNMENT (TRL 5)</span><span class="val">Magnetic rear coupling to merge two rovers into one 12-wheel unit.</span></div>
+        <div class="blackbox-line"><span class="tag">DUST SHIELD (TRL 1)</span><span class="val">Conceptual plasma-electrostatic shield, still purely theoretical.</span></div>
       </div>
     </div>
   </section>
