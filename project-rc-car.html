@@ -158,7 +158,7 @@
       <h1>Custom-Built RC Car</h1>
       <div class="proj-meta-row">
         <span><strong>Timeline:</strong> August &ndash; September</span>
-        <span><strong>Status:</strong> [ Add current status ]</span>
+        <span><strong>Status:</strong> Hardware working, custom software in progress</span>
       </div>
       <div class="hero-photo">PHOTO: RC CAR, FULL BUILD, HERO SHOT</div>
     </div>
@@ -171,13 +171,21 @@
         <div class="section-label">Overview</div>
         <h2>What this project is</h2>
         <p>
-          [ Placeholder — replace with real details: what inspired the build,
-          what the chassis is made from, and what the car is actually capable
-          of (speed, terrain, size). ]
+          The car's hardware, a metal four-wheel chassis with two drive
+          motors, a camera, and a set of sensors, arrived as a bundle of
+          components with nothing pre-programmed and nothing pre-configured.
+          The included Raspberry Pi compatibility didn't match what we
+          actually had on hand, so getting the hardware talking to each
+          other took real troubleshooting before any software work could
+          start.
         </p>
         <p>
-          [ Placeholder — describe the control setup: RC receiver, custom PCB,
-          or something else, and how the drivetrain/motors are configured. ]
+          The included documentation was unreliable: the written manual and
+          the video walkthrough conflicted with each other in places, and
+          neither one accounted for the Raspberry Pi mismatch we ran into.
+          All of the actual driving logic, AI behavior, and LLM integration
+          is being written entirely by us, from scratch, none of it came
+          pre-built.
         </p>
       </div>
       <div class="side-block">
@@ -186,6 +194,8 @@
           <span class="skill-pill">CAD</span>
           <span class="skill-pill">Electronics</span>
           <span class="skill-pill">Mechanical Design</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Troubleshooting</span>
         </div>
       </div>
     </div>
@@ -199,23 +209,23 @@
       <div class="loop">
         <div class="loop-step">
           <span class="num">01</span>
-          <div class="label">[ Step 1 ]</div>
-          <p>[ e.g. Chassis design in CAD ]</p>
+          <div class="label">Hardware Arrived</div>
+          <p>Chassis, motors, camera, and sensors on hand, nothing assembled or programmed.</p>
         </div>
         <div class="loop-step">
           <span class="num">02</span>
-          <div class="label">[ Step 2 ]</div>
-          <p>[ e.g. 3D printing / cutting the chassis ]</p>
+          <div class="label">Pi Compatibility Issue</div>
+          <p>Discovered the Raspberry Pi on hand didn't match what the documentation assumed.</p>
         </div>
         <div class="loop-step">
           <span class="num">03</span>
-          <div class="label">[ Step 3 ]</div>
-          <p>[ e.g. Motor and drivetrain install ]</p>
+          <div class="label">Manual vs. Video Conflict</div>
+          <p>Written instructions and video walkthrough disagreed, had to test and verify by hand.</p>
         </div>
         <div class="loop-step current">
           <span class="num">04</span>
-          <div class="label">[ Current Step ]</div>
-          <p>[ e.g. Control system wiring and testing ]</p>
+          <div class="label">Writing Our Own Code</div>
+          <p>Hardware now understood, next is writing the driving/AI logic ourselves from scratch.</p>
         </div>
       </div>
     </div>
@@ -227,10 +237,11 @@
       <div class="section-label">Specs</div>
       <h2>What's actually in it</h2>
       <div class="blackbox">
-        <div class="blackbox-line"><span class="tag">CHASSIS</span><span class="val">[ Add material / how it was made ]</span></div>
-        <div class="blackbox-line"><span class="tag">MOTOR</span><span class="val">[ Add motor/drivetrain details ]</span></div>
-        <div class="blackbox-line"><span class="tag">CONTROL</span><span class="val">[ Add RC receiver / control setup ]</span></div>
-        <div class="blackbox-line"><span class="tag">TOP SPEED</span><span class="val">[ Add if tested ]</span></div>
+        <div class="blackbox-line"><span class="tag">CHASSIS</span><span class="val">Metal, four-wheel, two drive motors</span></div>
+        <div class="blackbox-line"><span class="tag">CONTROL</span><span class="val">Raspberry Pi (compatibility issue required troubleshooting)</span></div>
+        <div class="blackbox-line"><span class="tag">SENSORS</span><span class="val">Camera + onboard sensor set</span></div>
+        <div class="blackbox-line"><span class="tag">SOFTWARE</span><span class="val">Fully custom — driving logic and AI/LLM integration written by us</span></div>
+        <div class="blackbox-line"><span class="tag">STATUS</span><span class="val">Hardware operational, custom software not yet started</span></div>
       </div>
     </div>
   </section>
