@@ -9,32 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
-  /* =====================================================
-     DESIGN TOKENS — this block is the source of truth for
-     every page. Copy it as-is into mission.html, video.html,
-     and questionnaire.html so all four pages stay in sync.
-     ===================================================== */
   :root{
-    /* color */
-    --bg:        #0A0E13;   /* page background */
-    --panel:     #10161D;   /* raised sections */
-    --panel-2:   #141B24;   /* cards inside panels */
-    --line:      #223040;   /* visible borders / rules */
-    --line-soft: #1A232D;   /* faint grid + dividers */
-    --text:      #E7EDF2;   /* primary text */
-    --text-dim:  #8A98A6;   /* secondary / body copy */
-    --mint:      #5EE6B0;   /* telemetry accent — links, tags, data */
-    --amber:     #FF8F3F;   /* action accent — CTAs, active states */
+    --bg:        #0A0E13;
+    --panel:     #10161D;
+    --panel-2:   #141B24;
+    --line:      #223040;
+    --line-soft: #1A232D;
+    --text:      #E7EDF2;
+    --text-dim:  #8A98A6;
+    --mint:      #5EE6B0;
+    --amber:     #FF8F3F;
 
-    /* type */
     --font-display: 'Space Mono', monospace;
     --font-body:    'Inter', sans-serif;
 
-    /* spacing scale (8px base) */
     --s1: 8px;  --s2: 16px; --s3: 24px; --s4: 32px;
     --s5: 48px; --s6: 64px; --s7: 96px; --s8: 128px;
 
-    /* layout */
     --maxw: 1160px;
     --nav-h: 76px;
   }
@@ -59,7 +50,6 @@
     padding:0 var(--s4);
   }
 
-  /* faint background grid, used behind the hero + footer */
   .grid-bg{
     background-image:
       linear-gradient(var(--line-soft) 1px, transparent 1px),
@@ -67,11 +57,6 @@
     background-size:40px 40px;
   }
 
-  /* =====================================================
-     NAV — identical markup/position on every page.
-     Left: club mark. Right: the 4 page links. The current
-     page gets the bracketed [ ACTIVE ] treatment.
-     ===================================================== */
   header{
     position:sticky; top:0; z-index:50;
     height:var(--nav-h);
@@ -122,19 +107,13 @@
   nav a.active::after{ content:" ]"; }
   .nav-toggle{ display:none; }
 
-  /* =====================================================
-     HERO — the signature element. Corner brackets + scan
-     line + telemetry readouts frame the headline like an
-     FPV drone's onscreen display (OSD). Ties the visual
-     language directly to what the club builds.
-     ===================================================== */
   .hero{
     position:relative;
     overflow:hidden;
     padding:var(--s8) var(--s4) var(--s7);
     border-bottom:1px solid var(--line);
   }
-  .hero::before{ /* scanline texture */
+  .hero::before{
     content:"";
     position:absolute; inset:0;
     background:repeating-linear-gradient(
@@ -149,7 +128,6 @@
     margin:0 auto;
     padding:var(--s6) var(--s5);
   }
-  /* viewfinder corner brackets */
   .hero-frame::before,
   .hero-frame::after,
   .corner-tl, .corner-tr, .corner-bl, .corner-br{
@@ -228,9 +206,6 @@
   .btn.ghost{ color:var(--text); }
   .btn.ghost:hover{ border-color:var(--mint); color:var(--mint); }
 
-  /* =====================================================
-     SECTION SCAFFOLD — reused for Gallery + What We Do
-     ===================================================== */
   section{ padding:var(--s7) 0; }
   .section-label{
     font-family:var(--font-display);
@@ -248,7 +223,6 @@
     margin-bottom:var(--s5);
   }
 
-  /* GALLERY */
   .gallery-grid{
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -288,7 +262,6 @@
     padding:3px 6px;
   }
 
-  /* WHAT WE DO */
   .whatwedo{
     display:grid;
     grid-template-columns:1.2fr 0.8fr;
@@ -309,7 +282,6 @@
   }
   .tag-list .tag-item span{ color:var(--mint); }
 
-  /* FOOTER */
   footer{
     border-top:1px solid var(--line);
     padding:var(--s6) 0 var(--s5);
@@ -331,9 +303,6 @@
     color:var(--line);
   }
 
-  /* =====================================================
-     RESPONSIVE
-     ===================================================== */
   @media (max-width: 860px){
     nav ul{ gap:var(--s3); font-size:0.66rem; }
     .whatwedo{ grid-template-columns:1fr; }
@@ -346,7 +315,7 @@
     .brand small{ display:none; }
     nav ul{ gap:var(--s2); font-size:0.6rem; }
     .hero-frame{ padding:var(--s5) var(--s3); }
-    .telemetry{ display:none; } /* too cramped on phones, cut it */
+    .telemetry{ display:none; }
     .cta-row{ flex-direction:column; align-items:flex-start; }
   }
 
@@ -386,7 +355,6 @@
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
   <div class="hero grid-bg">
     <div class="hero-frame">
       <div class="corner-tl"></div>
@@ -409,7 +377,6 @@
     </div>
   </div>
 
-  <!-- ================= GALLERY ================= -->
   <section>
     <div class="wrap">
       <div class="section-label">Field Log</div>
@@ -424,7 +391,6 @@
     </div>
   </section>
 
-  <!-- ================= WHAT WE DO ================= -->
   <section class="grid-bg">
     <div class="wrap">
       <div class="section-label">Systems We Build</div>
