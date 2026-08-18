@@ -9,9 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
-  /* =====================================================
-     DESIGN TOKENS — identical to home.html / mission.html.
-     ===================================================== */
   :root{
     --bg:        #0A0E13;
     --panel:     #10161D;
@@ -49,7 +46,6 @@
     background-size:40px 40px;
   }
 
-  /* NAV — identical to other pages, only the active link differs */
   header{
     position:sticky; top:0; z-index:50; height:var(--nav-h);
     background:rgba(10,14,19,0.9); backdrop-filter:blur(8px);
@@ -77,13 +73,6 @@
     font-size:clamp(1.4rem, 3vw, 1.9rem); letter-spacing:0.01em; margin-bottom:var(--s5);
   }
 
-  /* =====================================================
-     REEL HERO — the video player is the whole point of this
-     page, so it's the first and largest thing on it. Same
-     viewfinder-corner / telemetry chrome as the home hero,
-     since "watch us fly" deserves the same energy as the
-     landing page, not the quieter mission-page treatment.
-     ===================================================== */
   .reel-hero{
     padding:var(--s6) var(--s4) var(--s7);
     border-bottom:1px solid var(--line);
@@ -106,7 +95,7 @@
     border:1px solid var(--line);
     overflow:hidden;
   }
-  .player::before{ /* scanline texture */
+  .player::before{
     content:""; position:absolute; inset:0;
     background:repeating-linear-gradient(
       0deg, rgba(94,230,176,0.035) 0px, rgba(94,230,176,0.035) 1px,
@@ -152,7 +141,6 @@
   }
   @keyframes blink{ 0%,100%{opacity:1;} 50%{opacity:.2;} }
 
-  /* scrub bar under the player, doubles as the chapter key */
   .scrub{
     max-width:var(--maxw);
     height:4px;
@@ -162,10 +150,6 @@
   }
   .scrub-fill{ position:absolute; left:0; top:0; height:100%; width:22%; background:var(--amber); }
 
-  /* =====================================================
-     CHAPTERS — a real ordered sequence (what plays when),
-     styled like a video description's timestamp list.
-     ===================================================== */
   .chapters{
     display:flex; flex-direction:column;
   }
@@ -180,10 +164,6 @@
   .chapter-line .what{ font-size:0.95rem; text-transform:uppercase; letter-spacing:0.03em; width:220px; flex:none; }
   .chapter-line .desc{ color:var(--text-dim); font-family:var(--font-body); font-size:0.92rem; }
 
-  /* =====================================================
-     WHY JOIN — skills tag list, same component pattern as
-     the "What We Do" tags on the home page.
-     ===================================================== */
   .whyjoin{
     display:grid; grid-template-columns:0.8fr 1.2fr; gap:var(--s6); align-items:start;
   }
@@ -196,7 +176,6 @@
   .tag-list .tag-item span{ color:var(--mint); }
   .whyjoin p{ color:var(--text-dim); max-width:52ch; margin-bottom:var(--s3); }
 
-  /* closing statement, same visual weight as the mission page statement */
   .closer{
     text-align:center;
     padding:var(--s7) var(--s4);
@@ -209,16 +188,12 @@
   }
   .closer .statement em{ font-style:normal; color:var(--amber); }
 
-  /* FOOTER — identical to other pages */
   footer{ border-top:1px solid var(--line); padding:var(--s6) 0 var(--s5); }
   footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:var(--s4); }
   footer .meet{ font-family:var(--font-display); font-size:0.78rem; letter-spacing:0.05em; color:var(--text-dim); }
   footer .meet strong{ color:var(--mint); display:block; margin-bottom:6px; letter-spacing:0.12em; }
   footer .fine{ font-family:var(--font-display); font-size:0.68rem; color:var(--line); }
 
-  /* =====================================================
-     RESPONSIVE
-     ===================================================== */
   @media (max-width: 860px){
     nav ul{ gap:var(--s3); font-size:0.66rem; }
     .whyjoin{ grid-template-columns:1fr; }
@@ -271,7 +246,6 @@
     </div>
   </header>
 
-  <!-- ================= REEL HERO ================= -->
   <div class="reel-hero grid-bg">
     <div class="wrap">
       <div class="eyebrow">&gt; showreel</div>
@@ -294,7 +268,6 @@
     </div>
   </div>
 
-  <!-- ================= CHAPTERS ================= -->
   <section>
     <div class="wrap">
       <div class="section-label">Timestamps</div>
@@ -329,7 +302,6 @@
     </div>
   </section>
 
-  <!-- ================= WHY JOIN ================= -->
   <section class="grid-bg">
     <div class="wrap">
       <div class="section-label">Why Join</div>
@@ -357,7 +329,6 @@
     </div>
   </section>
 
-  <!-- ================= CLOSER ================= -->
   <div class="closer">
     <div class="statement">And yeah &mdash; <em>you're gonna have fun.</em></div>
   </div>
