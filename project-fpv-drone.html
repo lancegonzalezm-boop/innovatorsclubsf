@@ -42,7 +42,6 @@
   .section-label::before{ content:"// "; color:var(--mint); }
   h2{ font-family:var(--font-display); text-transform:uppercase; font-size:clamp(1.4rem, 3vw, 1.9rem); letter-spacing:0.01em; margin-bottom:var(--s5); }
 
-  /* back link */
   .back-link{
     display:inline-flex; align-items:center; gap:8px; margin:var(--s4) 0 0;
     font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.08em;
@@ -50,7 +49,6 @@
   }
   .back-link:hover{ color:var(--mint); }
 
-  /* hero */
   .proj-hero{ padding:var(--s5) var(--s4) var(--s7); border-bottom:1px solid var(--line); }
   .eyebrow{ font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.2em; color:var(--mint); text-transform:uppercase; margin-bottom:var(--s3); }
   .proj-hero h1{ font-family:var(--font-display); font-weight:700; text-transform:uppercase; font-size:clamp(2rem, 5vw, 3.4rem); line-height:1.05; margin-bottom:var(--s3); max-width:900px; }
@@ -60,7 +58,6 @@
   .hero-photo:has(img){ border:1px solid var(--line); }
   .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-  /* overview */
   .overview{ display:grid; grid-template-columns:1.3fr 0.7fr; gap:var(--s6); align-items:start; }
   .overview p{ color:var(--text-dim); max-width:62ch; margin-bottom:var(--s3); font-size:1.02rem; }
   .skill-pills{ display:flex; flex-wrap:wrap; gap:8px; }
@@ -68,7 +65,6 @@
   .side-block{ border:1px solid var(--line); padding:var(--s4); }
   .side-block .section-label{ margin-bottom:var(--s3); }
 
-  /* build log / iteration timeline — a real sequence, so numbered steps are earned */
   .loop{ display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:0; }
   .loop-step{ position:relative; padding:var(--s4) var(--s3); border:1px solid var(--line); border-left:none; }
   .loop-step:first-child{ border-left:1px solid var(--line); }
@@ -78,14 +74,12 @@
   .loop-step.current{ background:var(--panel-2); }
   .loop-step.current .label{ color:var(--amber); }
 
-  /* specs */
   .blackbox{ background:var(--panel); border:1px solid var(--line); padding:var(--s5); }
   .blackbox-line{ display:flex; gap:var(--s3); font-family:var(--font-display); padding:var(--s2) 0; border-bottom:1px solid var(--line-soft); font-size:0.9rem; align-items:baseline; flex-wrap:wrap; }
   .blackbox-line:last-child{ border-bottom:none; }
   .blackbox-line .tag{ color:var(--mint); flex:none; width:150px; }
   .blackbox-line .val{ color:var(--text); font-family:var(--font-body); }
 
-  /* gallery */
   .gallery-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s3); }
   .frame{ position:relative; aspect-ratio:1/1; background:var(--panel-2); border:1px dashed var(--line); display:flex; align-items:center; justify-content:center; color:var(--text-dim); font-family:var(--font-display); font-size:0.68rem; text-align:center; padding:var(--s2); overflow:hidden; }
   .frame:has(img){ border:1px solid var(--line); padding:0; }
@@ -151,7 +145,6 @@
 
   <div class="wrap"><a href="portfolio.html" class="back-link">← Back to Portfolio</a></div>
 
-  <!-- ================= HERO ================= -->
   <div class="proj-hero grid-bg">
     <div class="wrap">
       <div class="eyebrow">&gt; project log</div>
@@ -164,7 +157,6 @@
     </div>
   </div>
 
-  <!-- ================= OVERVIEW ================= -->
   <section>
     <div class="wrap overview">
       <div>
@@ -200,7 +192,6 @@
     </div>
   </section>
 
-  <!-- ================= BUILD LOG ================= -->
   <section class="grid-bg">
     <div class="wrap">
       <div class="section-label">Build Log</div>
@@ -235,7 +226,6 @@
     </div>
   </section>
 
-  <!-- ================= SPECS ================= -->
   <section>
     <div class="wrap">
       <div class="section-label">Specs</div>
@@ -250,7 +240,6 @@
     </div>
   </section>
 
-  <!-- ================= GALLERY ================= -->
   <section class="grid-bg">
     <div class="wrap">
       <div class="section-label">Gallery</div>
